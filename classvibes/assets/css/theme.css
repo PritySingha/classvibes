@@ -1,0 +1,175 @@
+/* Base Theme Variables */
+:root {
+    --primary-bg: #ffffff;
+    --secondary-bg: #faf3e0;
+    --card-bg: #f7e6c4;
+    --form-bg: #f4e2c1;
+    --border-color: #ccc;
+    --navbar-footer-bg: var(--primary-bg);
+    --button-bg: #c89d42;
+    --button-hover-bg: #a66e1e;
+    --accent-color: var(--button-hover-bg);
+    --primary-text: #212121;
+    --icon-color: var(--accent-color);
+    --outline-button-border: var(--button-bg);
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Dark Mode */
+[data-theme="dark"], .dark-mode {
+    --primary-bg: #131212;
+    --secondary-bg: #252525;
+    --card-bg: #1f1f1f;
+    --form-bg: #2e2e2e;
+    --border-color: #555;
+    --navbar-footer-bg: var(--primary-bg);
+    --button-bg: #e1b545;
+    --button-hover-bg: #d78a2e;
+    --accent-color: var(--button-hover-bg);
+    --primary-text: #f4f4f4;
+    --icon-color: var(--accent-color);
+    --outline-button-border: var(--button-bg);
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* General Layout */
+body {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar & Footer */
+.navbar, footer {
+    background-color: var(--navbar-footer-bg);
+    color: var(--primary-text);
+}
+
+/* Add navbar link styles */
+.navbar .nav-link.active {
+    font-weight: bold;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.navbar a,
+.navbar .navbar-brand{
+    color: var(--primary-text);
+}
+
+.navbar a:hover,
+.navbar .navbar-brand:hover {
+    color: var(--accent-color);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--accent-color);
+}
+
+/* Sections */
+.section, .hero-section {
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+}
+
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    color: var(--primary-text);
+}
+
+.card-title {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.card ul, .card ol {
+    list-style: none;
+    padding: 0;
+}
+.card {
+    box-shadow: var(--card-shadow);
+}
+
+/* Forms */
+input, textarea, select {
+    background-color: var(--form-bg);
+    border: 1px solid var(--border-color);
+    color: var(--primary-text);
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+input:focus, textarea:focus, select:focus,
+button:focus, .btn:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+
+/* Buttons */
+.btn {
+    background-color: var(--button-bg);
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--outline-button-border);
+    color: var(--primary-text);
+}
+.btn-outline:hover {
+    background-color: var(--outline-button-border);
+    color: #fff;
+}
+
+.btn i {
+    color: inherit; 
+    transition: inherit; 
+}
+
+/* Icons */
+.fab, .fa, i {
+    color: var(--icon-color);
+}
+
+
+/* Global Transitions */
+*, *::before, *::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.section:nth-of-type(even) {
+    background-color: var(--secondary-bg);
+}
+
+[data-theme="dark"] .dropdown-menu {
+    background-color: var(--card-bg);
+    color: var(--primary-text);
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+    background-color: var(--button-hover-bg);
+    color: #fff;
+}
+
+  
+
+
+
+
+
+
