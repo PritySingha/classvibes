@@ -14,30 +14,6 @@ if (isset($_SESSION['user_id'])) {
     }
     exit();
 }
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "classvibes@gmail.com";
-    $subject = "New Contact Message";
-
-    $name = htmlspecialchars($_POST['name']);
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-    $message = htmlspecialchars($_POST['message']);
-
-    $body = "You have received a new message:\n\n";
-    $body .= "Name: $name\n";
-    $body .= "Email: $email\n";
-    $body .= "Message:\n$message\n";
-
-    $headers = "From: $email";
-
-    if (mail($to, $subject, $body, $headers)) {
-        echo '<div class="alert alert-success text-center">Message sent successfully!</div>';
-    } else {
-        echo '<div class="alert alert-danger text-center">Message sending failed. Please try again.</div>';
-    }
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include 'includes/navbar.php'; ?>
     
     <!-- Hero Section -->
-    <div class="hero-section vh-100" id="home">
+    <div class="hero-section py-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -70,19 +46,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
                 <div class="col-lg-6 text-center d-none d-lg-block">
-                    <img src="assets/images/ClassVibes_logo_svg.png" alt="Classroom" class="img-fluid" style="max-height: 900px; width: 100%;">
+                    <img src="assets/images/ClassVibes_logo_svg.png" alt="Classroom" class="img-fluid" style="max-height: 600px;">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Services/Features Section -->
-    <div class="py-5" id="services">
-        <div class="container text-center">
-            <h2 class="mb-4">Our Services</h2>
-            <p class="lead mb-4">We offer powerful tools for Admins, Teachers, and Students.</p>
+    <!-- Features Section -->
+    <div class="py-5">
+        <div class="container">
             <div class="row g-4">
-            <!-- Admin Features -->
+                <!-- Admin Features -->
             <div class="col-md-4">
                 <div class="card h-100 shadow">
                     <div class="card-body">
@@ -148,7 +122,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <i class="fas fa-history text-info me-2"></i>
                                     Attendance history tracking
                                 </li>
-                                
+                                <li class="">
+                                    <i class="fas fa-bell text-warning me-2"></i>
+                                    Real-time notifications
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -157,76 +134,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
-    <!-- About Section -->
-<section class="py-5" id="about">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Image Column -->
-            <div class="col-lg-5 mb-4 mb-lg-0">
-                <img class="img-fluid rounded" src="./assets/images/about-img-1.jpg" alt="About Us">
-            </div>
-            <!-- Text Column -->
-            <div class="col-lg-7">
-    <h2 class="mb-4">About Us</h2>
-    <p class="lead text-secondary mb-3">
-        ClassVibes modernizes attendance tracking through innovative QR technology, enhancing educational efficiency and student engagement.
-    </p>
-    <p class="mb-4">
-        Our platform empowers educators with real-time insights while providing students with a seamless attendance experience. Designed for modern educational institutions prioritizing both security and convenience.
-    </p>
-    <div class="row">
-        <!-- Feature 1 -->
-        <div class="col-md-6 d-flex mb-3">
-            <div class="me-3 text-primary">
-                <i class="fas fa-clock fa-2x"></i>
-            </div>
-            <div>
-                <h5 class="mb-1">Real-Time Tracking</h5>
-                <p class="text-secondary mb-0">Instant attendance updates with live classroom monitoring and analytics.</p>
-            </div>
-        </div>
-        <!-- Feature 2 -->
-        <div class="col-md-6 d-flex mb-3">
-            <div class="me-3 text-primary">
-                <i class="fas fa-qrcode fa-2x"></i>
-            </div>
-            <div>
-                <h5 class="mb-1">Secure QR System</h5>
-                <p class="text-secondary mb-0">Time-limited encrypted codes prevent unauthorized attendance marking.</p>
-            </div>
-        </div>
-        <!-- Feature 3 -->
-        <div class="col-md-6 d-flex mb-3">
-            <div class="me-3 text-primary">
-                <i class="fas fa-chart-line fa-2x"></i>
-            </div>
-            <div>
-                <h5 class="mb-1">Data-Driven Insights</h5>
-                <p class="text-secondary mb-0">Comprehensive reports to track student participation patterns.</p>
-            </div>
-        </div>
-        <!-- Feature 4 -->
-        <div class="col-md-6 d-flex mb-3">
-            <div class="me-3 text-primary">
-                <i class="fas fa-mobile-alt fa-2x"></i>
-            </div>
-            <div>
-                <h5 class="mb-1">Mobile-First Design</h5>
-                <p class="text-secondary mb-0">Optimized experience for both instructors and students on any device.</p>
-            </div>
-        </div>
-    </div>
-</div>
-        </div>
-    </div>
-</section>
-
-
     <!-- Call to Action Section -->
     <div class=" py-5">
         <div class="container text-center">
             <h2 class="mb-4">Ready to Get Started?</h2>
-            <p class="lead mb-4">Join other educators and students already using ClassVibes</p>
+            <p class="lead mb-4">Join hundreds of educators and students already using ClassVibes</p>
             <div class="d-flex gap-3 justify-content-center">
                 <a href="auth/register.php" class="btn btn-light btn-lg">
                     <i class="fas fa-user-plus me-2"></i>Create Account
@@ -237,53 +149,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </div>
-
-    <!-- Contact Section -->
-<div class="py-5" id="contact">
-    <div class="container">
-        <div class="row">
-            <!-- Contact Info -->
-            <div class="col-md-6">
-                <h2 class="mb-4">Contact Us</h2>
-                <p>We'd love to hear from you. Reach out to us using the details below or send a message.</p>
-                <ul class="list-unstyled">
-                    <li class="mb-2">
-                        <i class="fas fa-map-marker-alt text-primary me-2"></i> 
-                        Raniganj, WB, India
-                    </li>
-                    <li class="mb-2">
-                        <i class="fas fa-phone text-success me-2"></i> 
-                        +91 99999 99999
-                    </li>
-                    <li class="mb-2">
-                        <i class="fas fa-envelope text-danger me-2"></i> 
-                        classvibes@gmail.com
-                    </li>
-                </ul>
-            </div>
-            <!-- Contact Form -->
-            <div class="col-md-6">
-        <form method="POST" action="">
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea name="message" class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">
-            <i class="fas fa-paper-plane me-1"></i> Send Message
-          </button>
-        </form>
-      </div>
-        </div>
-    </div>
-</div>
 
     <?php include 'includes/footer.php'; ?>
 </body>

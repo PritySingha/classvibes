@@ -1,0 +1,181 @@
+/* Base Theme Variables */
+:root {
+    --primary-bg: #ffffff;
+    --secondary-bg: #faf3e0;
+    --card-bg: #f7e6c4;
+    --form-bg: #f4e2c1;
+    --navbar-footer-bg: var(--primary-bg);
+    --button-bg: #c89d42;
+    --button-hover-bg: #a66e1e;
+    --accent-color: var(--button-hover-bg);
+    --primary-text: #212121;
+    --icon-color: var(--accent-color);
+    --outline-button-border: var(--button-bg);
+}
+
+/* Dark Mode */
+[data-theme="dark"], .dark-mode {
+    --primary-bg: #131212;
+    --secondary-bg: #252525;
+    --card-bg: #1f1f1f;
+    --form-bg: #2e2e2e;
+    --navbar-footer-bg: var(--primary-bg);
+    --button-bg: #e1b545;
+    --button-hover-bg: #d78a2e;
+    --accent-color: var(--button-hover-bg);
+    --primary-text: #f4f4f4;
+    --icon-color: var(--accent-color);
+    --outline-button-border: var(--button-bg);
+}
+
+/* General Layout */
+body {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar & Footer */
+.navbar, footer {
+    background-color: var(--navbar-footer-bg);
+    color: var(--primary-text);
+}
+
+/* Add these specific navbar link styles */
+.navbar a,
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: var(--primary-text);
+}
+
+.navbar a:hover,
+.navbar .navbar-brand:hover,
+.navbar .nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--accent-color);
+}
+
+/* Anchor Tags */
+a {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+a:hover, .navbar-brand:hover, .nav-link:hover {
+    color: var(--primary-text);
+}
+
+/* Sections */
+.section, .hero-section {
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+}
+
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    color: var(--primary-text);
+}
+
+.card-title {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.card ul, .card ol {
+    list-style: none;
+    padding: 0;
+}
+
+/* Forms */
+input, textarea, select {
+    background-color: var(--form-bg);
+    border: 1px solid #ccc;
+    color: var(--primary-text);
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+/* Buttons */
+.btn {
+    background-color: var(--button-bg);
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--outline-button-border);
+    color: var(--primary-text);
+}
+.btn-outline:hover {
+    background-color: var(--outline-button-border);
+    color: #fff;
+}
+
+.btn i {
+    color: inherit; 
+    transition: inherit; 
+}
+
+/* Icons */
+.fab, .fa, i {
+    color: var(--icon-color);
+}
+
+/* Dropdown Menus */
+.dropdown-menu {
+    background-color: var(--card-bg);
+    border: 1px solid var(--outline-button-border);
+}
+
+.dropdown-item {
+    color: var(--primary-text);
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: var(--button-hover-bg);
+    
+}
+
+.dropdown-toggle {
+    color: var(--accent-color) !important;
+}
+
+[data-theme="dark"] .dropdown-menu,
+.dark-mode .dropdown-menu {
+    background-color: var(--secondary-bg);
+    border-color: var(--form-bg);
+}
+
+[data-theme="dark"] .dropdown-item,
+.dark-mode .dropdown-item {
+    color: var(--primary-text);
+}
+
+/* Global Transitions */
+*, *::before, *::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+  
+  
+  
+  
+
+
+
+
+
+
