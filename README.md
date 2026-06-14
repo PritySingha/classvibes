@@ -25,7 +25,7 @@ ClassVibes is a web-based classroom management system designed to digitize atten
 ---
 
 ## 📂 Project Structure
---
+```
 CLASSVIBES/
 ├── admin/ # Admin dashboard & management
 ├── teacher/ # Teacher modules & attendance
@@ -36,7 +36,7 @@ CLASSVIBES/
 ├── assets/ # CSS, JS, images, uploads
 ├── database.sql # Database schema
 └── index.php # Entry point
---
+```
 ---
 
 ## ⚙️ Setup Instructions (XAMPP)
